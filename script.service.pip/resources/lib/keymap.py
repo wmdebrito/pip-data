@@ -79,6 +79,7 @@ class Keymap(object):
         s = doc.toprettyxml(indent=u"  ", newl=u"\n")
 
         # write strint to file
+        xbmc.log(self.path + u'/' + u'pipkeymap.xml', xbmc.LOGINFO)
         fobj = open(self.path + u'/' + u'pipkeymap.xml', u'w')
         fobj.write(s)
         fobj.close()

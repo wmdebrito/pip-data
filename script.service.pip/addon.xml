@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.service.pip" name="Picture-in-Picture Service" version="1.1.0" provider-name="mltobi">
+<addon id="script.service.pip" name="Picture-in-Picture Service" version="1.1.0" provider-name="wmdebrito">
 	<requires>
 		<import addon="xbmc.python" version="2.7.16"/>
 	</requires>
@@ -7,8 +7,6 @@
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Picture-in-Picture service</summary>
 		<description lang="en_GB">Automatically run Picture-in-Picture service code when Kodi starts. Use ramdisk for temporary folder!</description>
-		<summary lang="de_DE">Picture-in-Picture Dienst</summary>
-		<description lang="de_DE">Picture-in-Picture Dienst starte automatisch wenn Kodi startet. Verwende Ramdisk für den temporären Ordner!</description>
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE Version 2</license>
 		<source>https://github.com/mltobi/kodi-pip-addon</source>	

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="pip-data-master" name="wmdebrito's Repository" version="1.0.0" provider-name="wmdebrito">
+  <extension point="xbmc.addon.repository" name="wmdebrito's repository">
+      <info compressed="false">https://raw.githubusercontent.com/wmdebrito/pip-data/master/script.service.pip/addon.xml</info>
+      <checksum>https://raw.githubusercontent.com/wmdebrito/pip-data/master/script.service.pip/addon.xml.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/wmdebrito/pip-data/master/</datadir>
+     <artdir></artdir>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <description lang="en">wmdebrito's repository</description>
+    <license>a</license>
+    <language>a</language>
+    <website>a</website>
+    <news>a</news>
+    <assets></assets> 
+  </extension>
+</addon>

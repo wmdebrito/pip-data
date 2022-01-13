@@ -135,7 +135,7 @@ if __name__ == u'__main__':
     settings = pip.get_settings(__addon__)
 
     # init keymap
-    keymap = Keymap(xbmcvfs.translatePath(u"special://home/userdata/keymaps/"))
+    keymap = Keymap(xbmc.translatePath(u"special://home/userdata/keymaps/"))
     keymap.update(settings[u'keytoggle'], settings[u'keyback'], settings[u'keyup'], settings[u'keydown'])
     keymap.create()
 

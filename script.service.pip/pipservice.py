@@ -38,7 +38,7 @@ __icon__ = __addon__.getAddonInfo(u'icon')
 
 
 # files
-imagefilename = "/tmp/pip/thumb.png"
+imagefilename = "thumb.png"
 
 
 u'''

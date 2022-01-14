@@ -130,12 +130,11 @@ if __name__ == u'__main__':
     # init pip
     xbmc.log(u'[pip-service] Starting', xbmc.LOGINFO)
     pip = Pip(imagefilename)
-    pip.get_settings(__addon__)
-    pip.init_image()
-    pip.show_image(True)
 
     # get settings
     settings = pip.get_settings(__addon__)
+    pip.init_image()
+    pip.show_image(True)
 
     # init keymap
     keymap = Keymap(xbmc.translatePath(u"special://userdata/keymaps/"))
@@ -170,13 +169,13 @@ if __name__ == u'__main__':
 
     # test if ffmpeg executable is available
     if ffmpeg.test() and pip.get_settings_status():
-
+        xbmc.log(u'[pip-service] ffmpeg.test()', xbmc.LOGINFO)
         # loop until monitor reports an abort
         sleeptime = float(1/settings[u'fps'])
         while not monitor.waitForAbort(sleeptime):
-
+            xbmc.log(u'[pip-service] while not monitor.', xbmc.LOGINFO)
             if monitor.get_settings_changed_status():
-
+                xbmc.log(u'[pip-service] get_settings_changed_status.', xbmc.LOGINFO)
                 # update pip settings
                 settings = pip.get_settings(__addon__)
                 if pip.get_settings_status() == False:

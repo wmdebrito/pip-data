@@ -27,7 +27,7 @@ import os
 import shutil
 import uuid
 import platform
-from io import open
+#from io import open
 
 
 u'''

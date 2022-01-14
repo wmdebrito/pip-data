@@ -20,7 +20,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 from __future__ import absolute_import
 import xml.dom.minidom as xml
-from io import open
+#from io import open
 import xbmc
 
 u'''

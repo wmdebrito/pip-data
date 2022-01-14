@@ -22,7 +22,7 @@ from __future__ import division
 from __future__ import absolute_import
 import xbmc
 import xbmcaddon
-import xbmcvfs
+
 
 
 from resources.lib.m3u import M3u

@@ -71,9 +71,9 @@ class M3u(object):
         if self.m3ulines != None:
             for i, line in enumerate(self.m3ulines):
                 # loop line list
-                if line.find(u"logo=") != -1 and line.find(u"tvg-id=") != -1 and line.find(u"tvg-chno=") != -1:
+                if line.find(u"logo=") != -1 and line.find(u"group-title=") != -1:
                     # split line by tvg-chno
-                    parts = line.split(u"tvg-chno=")
+                    parts = line.split(u"group-title=")
 
                     if len(parts) > 1:
                         # split line by '",' to get channel name

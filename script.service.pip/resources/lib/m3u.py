@@ -125,8 +125,8 @@ class M3u(object):
 
         try:
             # if a channel label exists create a new channel.pip file that contains the url link
-            self.channel = result[u'result'][u'item'][u'label']
-            self.url = self.channel2url[self.channel]
+            self.channel = "Alex" #result[u'result'][u'item'][u'label']
+            self.url = "https://freespeech.akamaized.net/hls/live/2024573/live2/playlist.m3u8" #self.channel2url[self.channel]
 
         except KeyError:
             self.url = u""

@@ -55,6 +55,7 @@ class M3u(object):
     # download m3u as pipe from tvheadend server
     def download(self):
         self.m3ulines =  open("/storage/kodi/kodi.m3u", "r").read().decode(u"utf-8").split(u"\n")
+        xbmc.log(u"[pip-service] self.m3ulines: %d" % len(self.m3ulines), xbmc.LOGINFO)
 
 
     # parse m3u file to dict

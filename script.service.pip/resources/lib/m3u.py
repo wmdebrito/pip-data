@@ -22,8 +22,6 @@ from __future__ import absolute_import
 import xbmc
 
 import json
-import urllib
-from urllib2 import Request
 
 
 u'''
@@ -56,30 +54,7 @@ class M3u(object):
 
     # download m3u as pipe from tvheadend server
     def download(self):
-
-        url = u'http://%s:%s/playlist/channels.m3u?profile=%s' % (self.ipaddress, self.port, self.profile)
-
-        # urllib request with Digest auth
-        hndlr_chain = []
-        mgr = urllib2.HTTPPasswordMgrWithDefaultRealm()
-        mgr.add_password(None, url, self.username, self.password)
-        hndlr_chain.append(urllib2.HTTPDigestAuthHandler(mgr))
-
-        # build request
-        director = urllib2.build_opener(*hndlr_chain)
-        req = Request(url, headers={})
-
-        try:
-            # get request
-            result = director.open(req)
-
-            # read result ans split it to lines
-            self.m3ulines = result.read().decode(u"utf-8").split(u"\n")
-            xbmc.log(u"[pip-service] download m3u file with %d lines from %s." % (len(self.m3ulines), url), xbmc.LOGINFO)
-        except urllib2.HTTPError:
-            xbmc.log(u"[pip-service] download of m3u file failed - HTTP error 403: forbidden to access %s." % (url), xbmc.LOGWARNING)
-        except urllib2.URLError:
-            xbmc.log(u"[pip-service] download of m3u file failed - connection refused to %s." % (url), xbmc.LOGWARNING)
+        self.m3ulines =  open("/storage/kodi/kodi.m3u", "r").read().decode(u"utf-8").split(u"\n")
 
 
     # parse m3u file to dict

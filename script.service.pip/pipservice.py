@@ -130,9 +130,10 @@ if __name__ == u'__main__':
     # init pip
     xbmc.log(u'[pip-service] Starting', xbmc.LOGINFO)
     pip = Pip(imagefilename)
+    pip.get_settings(__addon__)
     pip.init_image()
     pip.show_image(True)
-    pip.get_settings(__addon__)
+
     # get settings
     settings = pip.get_settings(__addon__)
 

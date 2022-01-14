@@ -38,7 +38,7 @@ __icon__ = __addon__.getAddonInfo(u'icon')
 
 
 # files
-imagefilename = u"thumb.png"
+imagefilename = xbmc.translatePath(xbmcaddon.Addon().getAddonInfo(u'path')) + u"/resources/data/wait4pip.png"
 
 
 u'''

@@ -57,8 +57,9 @@ class Pip(object):
         self.w = 320
         self.h = 260
 
-        self.winId = 15005
-        self.winHdl = xbmcgui.Window(self.winId)
+        
+        self.winHdl = xbmcgui.Window()
+        self.winId = xbmcgui.getCurrentWindowId()
 
 
     # get addon settings

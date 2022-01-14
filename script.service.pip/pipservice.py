@@ -132,6 +132,7 @@ if __name__ == u'__main__':
     pip = Pip(imagefilename)
     pip.init_image()
     pip.show_image(True)
+    pip.get_settings(__addon__)
     # get settings
     settings = pip.get_settings(__addon__)
 

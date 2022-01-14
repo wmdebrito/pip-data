@@ -22,7 +22,6 @@ from __future__ import absolute_import
 import xbmc
 import xbmcgui
 import xbmcaddon
-import xbmcvfs
 
 import os
 import shutil
@@ -41,7 +40,7 @@ class Pip(object):
     def __init__(self, imagefilename):
 
         self.imagefilename = imagefilename
-        self.imagefile = u"/dev/shm/" + imagefilename
+        self.imagefile = u"/storage/pip-tmp/" + imagefilename
         self.settingsValid = False
         self.uuidfile = None
 
@@ -99,11 +98,11 @@ class Pip(object):
             if platform.system() == u"Linux":
                 xbmc.log(u"[pip-service] Detected Linux platform", xbmc.LOGDEBUG)
                 # test if /dev/shm is available and accessible
-                tmpfolder = u"/dev/shm"
+                tmpfolder = u"/storage/pip-tmp"
                 try:
                     fobj = open(tmpfolder + u"/writetest.txt", u"w")
                     fobj.close()
-                    self.settings[u'tmpfolder'] = u"/dev/shm"
+                    self.settings[u'tmpfolder'] = u"/storage/pip-tmp"
                     self.settingsValid = True
                 except IOError:
                     xbmc.log(u"[pip-service] Folder '%s' is not usable on detected Linux platform. Please define a ramdisk folder manually via addon configuration." % tmpfolder, xbmc.LOGERROR)
@@ -132,7 +131,7 @@ class Pip(object):
         winId = xbmcgui.getCurrentWindowId()
 
         # copy or overwrite keymap xml
-        wait4pipimage = xbmcvfs.translatePath(xbmcaddon.Addon().getAddonInfo(u'path')) + u"resources/data/wait4pip.png"
+        wait4pipimage = xbmc.translatePath(xbmcaddon.Addon().getAddonInfo(u'path')) + u"resources/data/wait4pip.png"
         shutil.copy(wait4pipimage, self.imagefile)
 
         # if video fullscreen window ID
@@ -190,7 +189,7 @@ class Pip(object):
 
         if waitimg:
             # copy or overwrite keymap xml
-            wait4pipimage = xbmcvfs.translatePath(xbmcaddon.Addon().getAddonInfo(u'path')) + u"resources/data/wait4pip.png"
+            wait4pipimage = xbmc.translatePath(xbmcaddon.Addon().getAddonInfo(u'path')) + u"resources/data/wait4pip.png"
             shutil.copy(wait4pipimage, self.imagefile)
 
         # if video fullscreen window ID

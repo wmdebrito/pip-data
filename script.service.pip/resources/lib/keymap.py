@@ -21,6 +21,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 from __future__ import absolute_import
 import xml.dom.minidom as xml
 from io import open
+import xbmc
 
 u'''
 Class Keymap
@@ -79,7 +80,9 @@ class Keymap(object):
         s = doc.toprettyxml(indent=u"  ", newl=u"\n")
 
         # write strint to file
-        xbmc.log(self.path + u'/' + u'pipkeymap.xml', xbmc.LOGINFO)
+        xbmc.log(u'>>>>>>>>>>', xbmc.LOGINFO)
+        xbmc.log(u'pipkeymap.xml', xbmc.LOGINFO)
+        xbmc.log(self.path, xbmc.LOGINFO)
         fobj = open(self.path + u'/' + u'pipkeymap.xml', u'w')
         fobj.write(s)
         fobj.close()

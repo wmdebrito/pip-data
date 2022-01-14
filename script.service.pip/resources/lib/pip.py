@@ -58,7 +58,7 @@ class Pip(object):
         self.h = 260
 
         
-        self.winHdl = xbmcgui.Window()
+        self.winHdl = xbmcgui.WindowDialog()
         self.winId = xbmcgui.getCurrentWindowId()
 
 

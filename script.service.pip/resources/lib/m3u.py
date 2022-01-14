@@ -79,7 +79,7 @@ class M3u(object):
                         # split line by '",' to get channel name
                         pparts = parts[1].split(u"\",")
 
-                        if len(pparts) > 1
+                        if len(pparts) > 1:
                             # create a loopup dictionary key=channel-name and value=url-link
                             name = pparts[1].replace(u'\n', u'')
                             self.channel2url[name] = self.m3ulines[i+1].replace(u'\n', u'')
